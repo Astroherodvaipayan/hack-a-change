@@ -12,8 +12,6 @@ load_dotenv()
 # Configure Generative AI API
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-
-
 # Prompt for the Generative AI model
 prompt = """You are a YouTube video summarizer. Your task is to take the transcript text 
 and summarize the entire video, providing the important points in under 500 words. Please 
@@ -45,7 +43,7 @@ def generate_gemini_content(transcript_text, prompt):
 
 # Function to translate text to the selected language
 @st.cache_data
-def Translate(Input_text,dest_lang):
+def Translate(Input_text, dest_lang):
     try:
         # Create a Translator object
         translator = GoogleTranslator(source='auto', target=dest_lang)
